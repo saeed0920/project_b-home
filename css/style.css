@@ -61,7 +61,6 @@ big-desktop
   text-decoration: none;
   transform: scale(1); }
   .btn:hover {
-    transform: scale(1.007);
     background-color: #b28451;
     box-shadow: 0 1rem 4rem rgba(0, 0, 0, 0.05); }
 
@@ -371,7 +370,72 @@ body {
 .sidebar {
   background-color: #c69963;
   grid-column: side-start / side-end;
-  grid-row: 1 / -1; }
+  grid-row: 1 / -1;
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: 1fr;
+  align-items: start;
+  justify-items: start; }
+  .sidebar__btn {
+    grid-area: 1 / 1 /1 /1;
+    background-color: #fff;
+    border-radius: 50%;
+    margin: 1rem;
+    width: 4rem;
+    height: 4rem;
+    z-index: 10000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.2s; }
+    .sidebar__btn:hover {
+      transform: scale(1.1); }
+  .sidebar__icon {
+    position: relative;
+    background-color: #c69963;
+    width: 2.4rem;
+    display: inline-block;
+    height: 0.3rem; }
+    .sidebar__icon::before, .sidebar__icon::after {
+      transition: all 0.2s;
+      content: "";
+      background-color: #c69963;
+      display: inline-block;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      transform-origin: center; }
+    .sidebar__icon::after {
+      left: 0;
+      top: 0.8rem; }
+    .sidebar__icon::before {
+      left: 0;
+      top: -0.8rem; }
+  .sidebar__background {
+    backdrop-filter: blur(10px);
+    backface-visibility: hidden;
+    background-color: rgba(255, 255, 255, 0.5);
+    grid-area: 1 / 1 / 1 /1;
+    margin: 1.5rem;
+    border-radius: 3px;
+    width: 3rem;
+    height: 3rem;
+    z-index: 999;
+    transition: all 0.5s ease-out; }
+  .sidebar__checkbox:checked ~ .sidebar__background {
+    width: 97.6vw;
+    height: 40rem; }
+  .sidebar__checkbox:checked ~ .sidebar__btn > .sidebar__icon {
+    background-color: transparent; }
+  .sidebar__checkbox:checked ~ .sidebar__btn > .sidebar__icon::before {
+    transform: rotate(-135deg);
+    top: 0; }
+  .sidebar__checkbox:checked ~ .sidebar__btn > .sidebar__icon::after {
+    transform: rotate(135deg);
+    top: 0; }
+  .sidebar__checkbox {
+    display: none; }
 
 .story__pictures {
   display: grid;
