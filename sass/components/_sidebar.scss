@@ -62,7 +62,8 @@
     position: absolute;
     top: 0;
     left: 0;
-    backdrop-filter: blur(10px);
+
+    backdrop-filter: blur(40px);
     backface-visibility: hidden;
     background-color: rgba($color-white, 0.5);
 
@@ -71,7 +72,7 @@
     border-radius: 3px;
     width: 3rem;
     height: 3rem;
-    z-index: 999;
+    z-index: 9990;
     transition: all 0.5s ease-out;
     // transition-delay: 0.5s;
   }
@@ -95,4 +96,83 @@
   &__checkbox {
     display: none;
   }
+}
+
+//* sidebar icon
+
+.sidebar__nav {
+  opacity: 0;
+  width: 0;
+  z-index: 9999;
+  position: fixed;
+  top: 20%;
+  left: 50%;
+
+  transform: translate(-50%, -50%);
+  transition: all 0.8s cubic-bezier(0.68, -0.6, 0.32, 1.6);
+  &__list {
+    display: flex;
+    justify-content: space-between;
+    transition: all 0.2s;
+    &__item {
+      list-style: none;
+      position: relative;
+      height: 7rem;
+      width: 7rem;
+      transition: all 0.2s;
+    }
+
+    &__link {
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.2s;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color: $color-white;
+      text-decoration: none;
+      text-align: center;
+    }
+  }
+}
+
+.side-icon {
+  line-height: 10rem;
+  position: relative;
+  font-size: 7rem;
+  transition: all 0.2s;
+}
+.side-text {
+  position: absolute;
+  bottom: -2rem;
+  color: $color-white;
+  font-weight: 400;
+  font-family: $font-secondary;
+  transition: all 0.25s;
+  text-transform: uppercase;
+  // transform: scale(0);
+  font-size: 2rem;
+}
+
+.sidebar__checkbox:checked ~ .sidebar__nav {
+  opacity: 1;
+  width: 60rem;
+}
+
+.sidebar__checkbox:checked
+  ~ .sidebar__nav
+  > .sidebar__nav__list
+  > .sidebar__nav__list__item
+  > .sidebar__nav__list__link {
+  opacity: 1;
+  visibility: visible;
+}
+.active {
+  color: $color-grey-dark-2;
+}
+
+nav ul li:hover {
+  transform: scale(1.1);
 }
