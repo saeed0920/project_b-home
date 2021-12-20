@@ -367,16 +367,20 @@ body {
   background-color: #101d2c;
   grid-column: col-start 7 / full-end; }
 
-.sidebar {
+.sidebar-background {
   background-color: #c69963;
   grid-column: side-start / side-end;
-  grid-row: 1 / -1;
-  display: grid;
-  grid-template-rows: 1fr;
-  grid-template-columns: 1fr;
-  align-items: start;
-  justify-items: start; }
+  grid-row: 1 / -1; }
+
+.sidebar {
+  top: 0;
+  left: 0;
+  margin: 1rem;
+  position: fixed; }
   .sidebar__btn {
+    position: absolute;
+    top: 0;
+    left: 0;
     grid-area: 1 / 1 /1 /1;
     background-color: #fff;
     border-radius: 50%;
@@ -413,10 +417,12 @@ body {
       left: 0;
       top: -0.8rem; }
   .sidebar__background {
+    position: absolute;
+    top: 0;
+    left: 0;
     backdrop-filter: blur(10px);
     backface-visibility: hidden;
     background-color: rgba(255, 255, 255, 0.5);
-    grid-area: 1 / 1 / 1 /1;
     margin: 1.5rem;
     border-radius: 3px;
     width: 3rem;
@@ -424,7 +430,7 @@ body {
     z-index: 999;
     transition: all 0.5s ease-out; }
   .sidebar__checkbox:checked ~ .sidebar__background {
-    width: 97.6vw;
+    width: 100vw;
     height: 40rem; }
   .sidebar__checkbox:checked ~ .sidebar__btn > .sidebar__icon {
     background-color: transparent; }

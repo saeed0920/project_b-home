@@ -18,9 +18,7 @@
     <title>b-home</title>
   </head>
   <body class="container">
-
-    <div class="sidebar">
-      <input id="toggle" type="checkbox" class="sidebar__checkbox">
+    <div class="sidebar"><input id="toggle" type="checkbox" class="sidebar__checkbox">
       <label for="toggle" class="sidebar__btn">
       <span class="sidebar__icon"></span>
       </label>
@@ -28,13 +26,15 @@
       <nav class="sidebar__nav">
         <ul class="sidebar__nav__list">
           <li class="sidebar__nav__list__item">
-            <a href="#" class="sedebar__nav__list__link">test</a>
+            <a href="#" class="sedebar__nav__list__link">
+              <span class="side-icon"></span>
+              <span class="side-text">Home</span>
+            </a>
           </li>
         </ul>
       </nav>
-
-
     </div>
+    <div class="sidebar-background"></div>
 
     <header class="header">Header</header>
 
@@ -235,9 +235,13 @@
 
 <div class="home">
   <img src="./img/house-4.jpeg" alt="home 4" class="home__img">
-  <svg class="home__like">
-    <use xlink:href="img/sprite.svg#icon-heart"></use>
-  </svg>
+    
+    
+              <svg class="home__like">
+                    <use xlink:href="img/sprite.svg#icon-heart"></use>
+              </svg>
+    
+ 
   <h5 class="home__name">Large Rastical Villa</h5>
   <div class="home__location">
       <svg class="home__icon">
