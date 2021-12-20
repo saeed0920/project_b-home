@@ -1,4 +1,61 @@
 .footer {
   background-color: $color-secondary;
   grid-column: full-start / full-end;
+
+  padding: 8rem;
+}
+.nav {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  grid-gap: 2rem;
+  align-items: center;
+  &__item {
+    list-style: none;
+  }
+  &__link {
+    &,
+    &:visited,
+    &:link {
+      border-radius: 3px;
+      font-size: 1.4rem;
+      text-transform: uppercase;
+      text-align: center;
+      font-family: $font-primary;
+      text-decoration: none;
+      color: $color-white;
+      display: block;
+      padding: 1.5rem;
+    }
+    transition: all 0.2s;
+    &:hover,
+    &:active {
+      transform: translateY(-4px);
+      background-color: rgba($color-white, 0.04);
+    }
+  }
+}
+
+.copyright {
+  margin-right: auto;
+  margin-left: auto;
+  text-align: center;
+  margin-top: 6rem;
+  font-size: 1.4rem;
+  font-family: $font-primary;
+  color: $color-grey-light-2;
+
+  a {
+    text-decoration: none;
+    color: $color-grey-light-2;
+    backface-visibility: hidden;
+    display: inline-block;
+    transition: all 0.2s;
+    background-color: $color-secondary;
+    &:hover {
+      z-index: 10;
+      color: $color-primary;
+      box-shadow: 0 1rem 2rem rgba($color-black, 0.3);
+      transform: rotate(5deg) scale(1.3);
+    }
+  }
 }
