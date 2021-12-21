@@ -2,6 +2,11 @@
   background-color: $color-primary;
   grid-column: side-start / side-end;
   grid-row: 1 / -1;
+
+  @include res(tab-small) {
+    grid-column: 1 / -1;
+    grid-row: 1 / 2;
+  }
 }
 
 .sidebar {
@@ -27,6 +32,9 @@
     align-items: center;
     cursor: pointer;
     transition: all 0.2s;
+    @include res(tab-small) {
+      top: -1rem;
+    }
     &:hover {
       transform: scale(1.1);
     }
@@ -59,6 +67,9 @@
     }
   }
   &__background {
+    @include res(tab-small) {
+      top: -1rem;
+    }
     position: absolute;
     top: 0;
     left: 0;
@@ -83,6 +94,9 @@
   &__checkbox:checked ~ &__background {
     width: 97vw;
     height: 40rem;
+    @include res(tab-small) {
+      height: 20rem;
+    }
   }
 
   &__checkbox:checked ~ &__btn > &__icon {
@@ -110,6 +124,9 @@
   position: relative;
   transform: translate(-50%, -50%);
   top: 20rem;
+  @include res(tab-small) {
+    top: 10rem;
+  }
   left: 48.5vw;
   transition: all 0.8s cubic-bezier(0.68, -0.6, 0.32, 1.6);
   &__list {
@@ -122,6 +139,10 @@
       height: 7rem;
       width: 7rem;
       transition: all 0.2s;
+      @include res(tab-small) {
+        height: 6rem;
+        width: 6rem;
+      }
     }
 
     &__link {
@@ -145,6 +166,10 @@
   position: relative;
   font-size: 7rem;
   transition: all 0.2s;
+  @include res(tab-small) {
+    font-size: 5rem;
+    line-height: 8rem;
+  }
 }
 .side-text {
   position: absolute;
@@ -156,11 +181,16 @@
   text-transform: uppercase;
   // transform: scale(0);
   font-size: 2rem;
+  @include res(tab-small) {
+    font-size: 1.5rem;
+  }
 }
 
 .sidebar__checkbox:checked ~ .sidebar__nav {
   opacity: 1;
   width: 60rem;
+  height: 7rem;
+  width: 55rem;
 }
 
 .sidebar__checkbox:checked

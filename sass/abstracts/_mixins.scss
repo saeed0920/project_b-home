@@ -60,4 +60,11 @@ big-desktop
       @content;
     }
   }
+  //! one more break down for responsive webside
+  @if $res == 800px {
+    @media only screen and (max-width: 50em) {
+      // 800px
+      @content;
+    }
+  }
 }
