@@ -8,7 +8,7 @@
   top: 0;
   left: 0;
   margin: 1rem;
-  position: fixed;
+  position: absolute;
   &__btn {
     position: absolute;
     top: 0;
@@ -62,23 +62,26 @@
     position: absolute;
     top: 0;
     left: 0;
-
-    backdrop-filter: blur(40px);
-    backface-visibility: hidden;
     background-color: rgba($color-white, 0.5);
+    @supports (backdrop-filter: none) or (-webkit-backdrop-filter: none) {
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+    }
+
+    backface-visibility: hidden;
 
     // padding: 0.5rem;
     margin: 1.5rem;
-    border-radius: 3px;
+    border-radius: 2rem;
     width: 3rem;
     height: 3rem;
-    z-index: 9990;
-    transition: all 0.5s ease-out;
+    z-index: 999;
+    transition: all 0.4s ease-out;
     // transition-delay: 0.5s;
   }
 
   &__checkbox:checked ~ &__background {
-    width: 100vw;
+    width: 97vw;
     height: 40rem;
   }
 
@@ -104,11 +107,10 @@
   opacity: 0;
   width: 0;
   z-index: 9999;
-  position: fixed;
-  top: 20%;
-  left: 50%;
-
+  position: relative;
   transform: translate(-50%, -50%);
+  top: 20rem;
+  left: 48.5vw;
   transition: all 0.8s cubic-bezier(0.68, -0.6, 0.32, 1.6);
   &__list {
     display: flex;
@@ -175,4 +177,22 @@
 
 nav ul li:hover {
   transform: scale(1.1);
+}
+.hover-green:hover span {
+  color: #55f06f;
+}
+.hover-green:hover span.side-text {
+  color: #55f06f;
+}
+.hover-gray:hover span {
+  color: #607d8b;
+}
+.hover-blue:hover span {
+  color: #3466d0;
+}
+.hover-yellow:hover span {
+  color: #ffc20e;
+}
+.hover-gold:hover span {
+  color: $color-grey-dark-1;
 }
