@@ -13,16 +13,27 @@
     height: 30vh;
   }
 
+  @include res(phone) {
+    height: 60vh;
+  }
+
   &__list {
     display: grid;
     grid-template-columns: min-content max-content;
     grid-column-gap: 2rem;
-    // grid-row-gap: 5vh;
+    grid-row-gap: 5vh;
     align-items: center;
     @include res(800px) {
       justify-content: center;
       grid-template-rows: 1fr;
       grid-template-columns: 1fr 3fr 1fr 3fr 1fr max-content;
+      grid-row-gap: 0;
+    }
+
+    @include res(phone) {
+      grid-template-columns: min-content max-content;
+      grid-row-gap: 0;
+      grid-row-gap: 6vh;
     }
   }
 

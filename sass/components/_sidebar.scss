@@ -97,6 +97,11 @@
     @include res(tab-small) {
       height: 20rem;
     }
+
+    @include res(phone) {
+      height: 10rem;
+      width: 94vw;
+    }
   }
 
   &__checkbox:checked ~ &__btn > &__icon {
@@ -127,6 +132,11 @@
   @include res(tab-small) {
     top: 10rem;
   }
+
+  @include res(phone) {
+    top: 6rem;
+  }
+
   left: 48.5vw;
   transition: all 0.8s cubic-bezier(0.68, -0.6, 0.32, 1.6);
   &__list {
@@ -142,6 +152,11 @@
       @include res(tab-small) {
         height: 6rem;
         width: 6rem;
+      }
+
+      @include res(phone) {
+        height: 3rem;
+        width: 3rem;
       }
     }
 
@@ -170,6 +185,10 @@
     font-size: 5rem;
     line-height: 8rem;
   }
+  @include res(phone) {
+    font-size: 3rem;
+    line-height: 4rem;
+  }
 }
 .side-text {
   position: absolute;
@@ -184,6 +203,15 @@
   @include res(tab-small) {
     font-size: 1.5rem;
   }
+  @include res(phone) {
+    font-size: 1.3rem;
+    font-weight: 300;
+  }
+
+  @include res(400px) {
+    font-size: 1.2rem;
+    font-weight: 100;
+  }
 }
 
 .sidebar__checkbox:checked ~ .sidebar__nav {
@@ -191,6 +219,14 @@
   width: 60rem;
   height: 7rem;
   width: 55rem;
+
+  @include res(phone) {
+    width: 40rem;
+  }
+
+  @include res(400px) {
+    width: 34rem;
+  }
 }
 
 .sidebar__checkbox:checked

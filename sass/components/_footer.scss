@@ -3,12 +3,18 @@
   grid-column: full-start / full-end;
 
   padding: 8rem;
+  @include res(phone) {
+    padding: 5rem;
+  }
 }
 .nav {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
   grid-gap: 2rem;
   align-items: center;
+  @include res(phone) {
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+  }
   &__item {
     list-style: none;
   }
@@ -16,6 +22,7 @@
     &,
     &:visited,
     &:link {
+      box-shadow: 0 2rem 4rem rgba($color-black, 0.1);
       border-radius: 3px;
       font-size: 1.4rem;
       text-transform: uppercase;

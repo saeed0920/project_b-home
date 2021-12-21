@@ -11,6 +11,10 @@ html {
   @include res(tab-big) {
     font-size: 50%;
   }
+
+  @include res(400px) {
+    font-size: 40%;
+  }
 }
 
 body {
@@ -52,9 +56,6 @@ body {
   }
 
   @include res(800px) {
-    grid-template-rows: 6rem calc(100vh - 6rem) min-content min-content 40vw repeat(
-        3,
-        min-content
-      );
+    grid-template-rows: 6rem calc(100vh - 6rem);
   }
 }

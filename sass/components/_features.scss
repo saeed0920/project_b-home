@@ -2,6 +2,9 @@
   grid-column: center-start / center-end;
   margin: 15rem 0;
   display: grid;
+  @include res(phone) {
+    margin: 8rem 0;
+  }
 
   grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
   grid-gap: 6rem;
@@ -11,6 +14,11 @@
     grid-template-columns: min-content 1fr;
     grid-row-gap: 1rem;
     grid-column-gap: 2.5rem;
+    @include res(phone) {
+      border-bottom: 1px solid $color-grey-light-1;
+      padding-bottom: 2rem;
+    }
+
     &__text {
       font-size: 1.7rem;
     }

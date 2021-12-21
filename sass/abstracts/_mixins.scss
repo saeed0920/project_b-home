@@ -36,9 +36,25 @@ tab-big
 big-desktop
 */
 @mixin res($res) {
+  //! two more break down for responsive webside
+  @if $res == 400px {
+    @media only screen and (max-width: 25em) {
+      // 400px
+      @content;
+    }
+  }
+
   @if $res == phone {
     @media only screen and (max-width: 37.5em) {
       //600px
+      @content;
+    }
+  }
+
+  //! one more break down for responsive webside
+  @if $res == 800px {
+    @media only screen and (max-width: 50em) {
+      // 800px
       @content;
     }
   }
@@ -57,13 +73,6 @@ big-desktop
   @if $res == big-desktop {
     @media only screen and (min-width: 112.5em) {
       //1800px
-      @content;
-    }
-  }
-  //! one more break down for responsive webside
-  @if $res == 800px {
-    @media only screen and (max-width: 50em) {
-      // 800px
       @content;
     }
   }

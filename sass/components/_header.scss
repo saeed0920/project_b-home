@@ -16,6 +16,11 @@
   grid-row-gap: 1.5rem;
   justify-content: center;
 
+  @include res(phone) {
+    padding: 4rem;
+    grid-row-gap: 2rem;
+  }
+
   @include res(800px) {
     grid-column: 1 / -1;
   }
