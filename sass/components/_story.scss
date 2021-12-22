@@ -27,8 +27,14 @@
       grid-column: 1 / 6;
     }
     border-radius: 4px;
+    outline: 3px solid $color-primary;
+    outline-offset: 0.2rem;
+    outline-style: inset;
   }
   &__img--2 {
+    outline: 3px solid $color-primary;
+    outline-offset: 0.08rem;
+    outline-style: inset;
     border-radius: 4px;
     width: 120%;
     box-shadow: 0 2rem 5rem rgba($color-black, 0.2);

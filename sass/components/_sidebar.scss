@@ -73,7 +73,7 @@
     position: absolute;
     top: 0;
     left: 0;
-    background-color: rgba($color-white, 0.5);
+    background-color: rgba($color-white, 0.1);
     @supports (backdrop-filter: none) or (-webkit-backdrop-filter: none) {
       backdrop-filter: blur(10px);
       -webkit-backdrop-filter: blur(10px);
