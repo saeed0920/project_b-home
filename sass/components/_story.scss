@@ -26,8 +26,10 @@
       grid-row: 1 / -1;
       grid-column: 1 / 6;
     }
+    border-radius: 4px;
   }
   &__img--2 {
+    border-radius: 4px;
     width: 120%;
     box-shadow: 0 2rem 5rem rgba($color-black, 0.2);
     grid-row: 4 / 6;
